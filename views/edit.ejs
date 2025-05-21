@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edit your message</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="chat-container">
+    <h1>Edit Message</h1>
+    <form class="new-form" method="POST" action="/chats/<%= chat._id %>?_method=PUT">
+        <div class="form-group">
+            <label for="from">From</label>
+            <input type="text" name="from" id="from" value="<%= chat.from %>" placeholder="Your name" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="to">To</label>
+            <input type="text" name="to" id="to" value="<%= chat.to %>" placeholder="Recipient's name" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="msg">Message</label>
+            <textarea name="msg" id="msg" placeholder="Type your message here..." required><%= chat.msg %></textarea>
+        </div>
+        <div>
+        <label for="msg">date</label>
+        <input type="date" name="timestamp" value="<%= chat.timestamp %>" required>
+    </div>
+        <br>
+        
+        <button type="submit">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px; vertical-align: middle;">
+                <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/>
+            </svg>
+            Update Message
+        </button>
+    </form>
+</div>
+</body>
+</html>

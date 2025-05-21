@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>welcome to the chetzeey</h1>
+    <% for(let chat of chats) { %>
+        <div class="chat">
+            <p>from : <%= chat.from %></p>
+            <p>Message : <%= chat.msg %></p>
+            <p>Recieved by: <%= chat.to %></p>
+            <p><%= chat.timestamp.toString().split(" ").slice(0,4).join("-") %></p>
+            <a class="edit" href="/chats/<%= chat._id %>/edit">edit</a>
+            <form class="delete_button" method="post"  action="/chats/<%= chat._id %>?_method=DELETE">
+                <button>delete</button>
+            </form>
+            <a href="/chats/<%= chat._id %>/reply">reply</a>
+        </div>
+        <% } %>
+        
+        <a class="new" href="/chats/new">new Message</a>
+
+</body>
+</html>
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>reply to <%= chats.from %></h1>
+<div class="chat-container">
+    <form class="new-form" method="POST" action="/chats">
+        <div class="form-group">
+            <label for="from">From</label>
+            <input type="text" name="from" id="from" placeholder="Your name" required value="<%= chats.to %>">
+        </div>
+        
+        <div class="form-group">
+            <label for="to">To</label>
+            <input type="text" name="to" id="to" placeholder="Recipient's name" required value="<%= chats.from %>">
+        </div>
+        
+        <div class="form-group">
+            <label for="msg">Message</label>
+            <textarea name="msg" id="msg" placeholder="Type your message here..." required></textarea>
+        </div>
+        <div>
+            <label for="timestamp">Date</label>
+            <input type="date" name="timestamp" required>
+        </div>
+        <br>
+        
+        <button type="submit">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px; vertical-align: middle;">
+                <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/>
+            </svg>
+            Send Message
+        </button>
+    </form>
+</div>
+</body>
+</html> 
